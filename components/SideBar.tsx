@@ -1,14 +1,23 @@
 'use client';
 import React from 'react'
 import UserItem from './UserItem';
-import { Command, CommandEmpty, CommandGroup, CommandItem, CommandList, CommandSeparator } from './ui/command';
-import { CommandInput } from './ui/command';
-import { group } from 'console';
+import { Command, CommandGroup, CommandItem, CommandList } from './ui/command';
 import { Bell, CirclePlus, House, Library, LogOut, QrCode, Settings, User } from 'lucide-react';
 import { Button } from './ui/button';
 
+interface MenuItem {
+    link: string;
+    label: string;
+    icon: JSX.Element;
+}
+
+interface MenuGroup {
+    group: string;
+    items: MenuItem[];
+}
+
 const SideBar = () => { 
-    const menuList = [
+    const menuList: MenuGroup[] = [
         {
             group: "General",
             items: [
@@ -66,9 +75,9 @@ const SideBar = () => {
             <div className='grow'>
                 <Command style={{overflow: 'visible'}}>
                     <CommandList style={{overflow: 'visible'}}>
-                        {menuList.map((menu: any, key: number) => (
+                        {menuList.map((menu: MenuGroup, key: number) => (
                             <CommandGroup key={key} heading={menu.group}>
-                                {menu.items.map((option: any, optionKey: number) => 
+                                {menu.items.map((option: MenuItem, optionKey: number) => 
                                 <CommandItem key={optionKey} className='flex gap-2 cursor-pointer'>
                                     {option.icon}
                                     {option.label}

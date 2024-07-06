@@ -1,20 +1,25 @@
 'use client';
 
-import { BellIcon, LogOut, NotebookPen } from "lucide-react";
+import { BellIcon, NotebookPen } from "lucide-react";
 import { Button } from "./ui/button";
 import {
         DropdownMenu,
         DropdownMenuContent,
         DropdownMenuItem,
-        DropdownMenuLabel,
-        DropdownMenuSeparator,
         DropdownMenuTrigger,
     } from "@/components/ui/dropdown-menu"
 import { useState } from "react";
 
+interface Notification {
+    id: number;
+    text: string;
+    date: string;
+    read: boolean
+}
+
 
 const Header = () => {
-    const [notification, setNotification] = useState<any>([
+    const [notification, setNotification] = useState<Notification[]>([
         {
             id: 1,
             text: "Hello, i'm a notification",
@@ -49,7 +54,7 @@ return (
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
-                    {notification.map((item: any, key: number) => <DropdownMenuItem key={key}
+                    {notification.map((item: Notification, key: number) => <DropdownMenuItem key={key}
                     className="py-2 px-3 cursor-pointer hover:bg-neutral-50 transition flex items-start gap-2">
                         <div className={`h-3 w-3 rounded-full my-1 ${!item.read ? 'bg-orange-500 ' : 'bg-neutral-200'}`}></div>
                         <div>
