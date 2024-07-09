@@ -1,6 +1,9 @@
+import TodayClasses from "@/components/TodayClasses";
 
 export default function Home() {
   return (
-    <h1>Hello, App!</h1> 
+    <>
+      <TodayClasses />
+    </>
   )
 }

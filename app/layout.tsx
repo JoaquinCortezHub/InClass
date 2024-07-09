@@ -19,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} flex justify-between items-start`}>
-        <SideBar />
-        <main className="w-full h-full pl-[300px]">
+        <div className="min-w-[300px]   ">
+          <SideBar /> 
+        </div>
+        <main className="w-full h-full ">
           <Header />
           {children}
         </main>

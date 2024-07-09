@@ -68,7 +68,7 @@ const SideBar = () => {
     ];
 
     return (
-        <div className=' fixed w-[300px] min-w-[300px] border-r min-h-screen p-4 flex flex-col gap-4'>
+        <div className=' fixed w-[300px] p-4 min-h-screen flex flex-col gap-4 border-r'>
             <div className='text-center'>
                 <h1 className='text-2xl font-bold'>In<span className="text-orange-500">Class</span></h1>
             </div>
@@ -98,5 +98,5 @@ const SideBar = () => {
     )
 };
 
-export default SideBar
+export default SideBar;
 
