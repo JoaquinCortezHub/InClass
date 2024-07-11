@@ -1,8 +1,10 @@
 'use client';
 import React from 'react'
+import { useState } from 'react';
 import UserItem from './UserItem';
+import { Calendar } from "./ui/calendar";
 import { Command, CommandGroup, CommandItem, CommandList } from './ui/command';
-import { Bell, CirclePlus, House, Library, LogOut, QrCode, Settings, User } from 'lucide-react';
+import { Bell, CalendarDays, CirclePlus, House, Library, LogOut, QrCode, Settings, User } from 'lucide-react';
 import { Button } from './ui/button';
 
 interface MenuItem {
@@ -16,7 +18,8 @@ interface MenuGroup {
     items: MenuItem[];
 }
 
-const SideBar = () => { 
+const SideBar = () => {
+    const [date, setDate] = useState<Date | undefined>(new Date());
     const menuList: MenuGroup[] = [
         {
             group: "General",
@@ -40,6 +43,11 @@ const SideBar = () => {
                     link: "/",
                     label: "Profile",
                     icon: <User />
+                },
+                {
+                    link: "/",
+                    label: "Events",
+                    icon: <CalendarDays />
                 }
                 
             ]
@@ -86,6 +94,14 @@ const SideBar = () => {
                         ))}
                     </CommandList >
                 </Command>
+            </div>
+            <div className='mb-9 flex items-start justify-start w-full'>
+                <Calendar
+                    mode="single"
+                    selected={date}
+                    onSelect={setDate}
+                    className="rounded-md "
+                />
             </div>
             <Button variant={'ghost'} className='flex items-center justify-start gap-1 pl-0 w-full '>
                 <LogOut className="ml-2" />

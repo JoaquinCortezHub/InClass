@@ -57,7 +57,7 @@ const exportList: Exports[] = [
 
 const RecentExports = () => {
     return (
-        <div className='px-5 pb-5'>
+        <div className='px-5 pb-5 grow'>
             <Card>
                 <CardHeader>
                     <CardTitle className='text-neutral-500 text-xl'>Recent Exports</CardTitle>
@@ -69,13 +69,13 @@ const RecentExports = () => {
                                 <TableHead className='w-[150px]'>Class</TableHead>
                                 <TableHead className='w-[150px]'>Date</TableHead>
                                 <TableHead className='w-[150px]'>Size</TableHead>
-                                <TableHead className='text-right'>Action</TableHead>
+                                <TableHead className='text-right'>Download</TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
                             {exportList.map((item: Exports) => (
                                 <TableRow key={item.id}>
-                                    <TableCell className='font-medium'>{item.class}</TableCell>
+                                    <TableCell className='font-semibold'>{item.class}</TableCell>
                                     <TableCell>{item.date}</TableCell>
                                     <TableCell>{item.size} KB</TableCell>
                                     <TableCell className='text-right'>
