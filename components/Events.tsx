@@ -1,67 +1,8 @@
-import {
-    Card,
-    CardContent,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
-import {
-    Table,
-    TableBody,
-    TableCaption,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-} from "@/components/ui/table";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader,TableRow } from "@/components/ui/table";
+import { eventList } from "@/app/data/eventList";
+import { Event } from "@/app/types/event";
 import { Badge } from "./ui/badge";
-
-interface Event {
-    id: number;
-    from: number;
-    to? : number;
-    month: string;
-    name: string;
-    type: "Event" | "Holiday" 
-}
-
-const eventList: Event[] = [
-    {
-        id: 1,
-        from: 4,
-        month: "Apr",
-        name: "Primer parcial matemática",
-        type: "Event",
-    },
-    {
-        id: 2,
-        from: 9,
-        month: "Jul",
-        name: "Dia de la Independencia",
-        type: "Holiday"
-    },
-    {
-        id: 3,
-        from: 12,
-        to: 25,
-        month: "Aug",
-        name: "Receso invernal",
-        type: "Event"
-    },
-    {
-        id: 4,
-        from: 2,
-        month: "Sept",
-        name: "Feriado Puente",
-        type: "Holiday"
-    },
-    {
-        id: 5,
-        from: 31,
-        month: "Oct",
-        name: "Convencion UDA",
-        type: "Event"
-    }
-];
 
 const Events = () => {
     return (

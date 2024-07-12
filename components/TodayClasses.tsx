@@ -1,50 +1,9 @@
 'use client';
-import {
-        Card,
-        CardContent,
-        CardDescription,
-        CardFooter,
-        CardHeader,
-        CardTitle,
-    } from "@/components/ui/card"
+import { Classes } from "@/app/types/classes";
+import { classes } from "@/app/data/classes";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "./ui/button";
 import { NotebookPen } from "lucide-react";
-
-interface Classes {
-    id: number;
-    name: string;
-    time: string;
-    duration: number; //hrs
-    studentQuantity: number;
-    currentChapter: string;
-}
-
-const classes: Classes[] = [
-    {
-        id: 1,
-        name: "Matemática I",
-        time: "16:00",
-        duration: 4,
-        studentQuantity: 30,
-        currentChapter: "Unidad IV"
-    },
-    {
-        id: 2,
-        name: "Laboratorio I",
-        time: "18:00",
-        duration: 3,
-        studentQuantity: 26,
-        currentChapter: "Unidad V"
-    },
-    {
-        id: 3,
-        name: "Arquitectura de computadoras I",
-        time: "15:00",
-        duration: 2,
-        studentQuantity: 18,
-        currentChapter: "Unidad VI"
-    }
-] 
 
 const TodayClasses = () => {
 return (

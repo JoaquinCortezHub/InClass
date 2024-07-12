@@ -1,59 +1,11 @@
 'use client';
 import React from 'react';
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
-import {
-    Table,
-    TableBody,
-    TableCaption,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-} from "@/components/ui/table";
+import { Exports } from '@/app/types/exports';
+import { exportList } from '@/app/data/exportList';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Button } from './ui/button';
 import { DownloadIcon } from 'lucide-react';
-
-
-interface Exports {
-    id: number;
-    class: string;
-    date: string;
-    size: number;
-};
-
-const exportList: Exports[] = [
-    {
-        id: 1,
-        class: "Laboratorio I",
-        date: "yesterday",
-        size: 18
-    },
-    {
-        id: 2,
-        class: "Arquitectura I",
-        date: "Wednesday",
-        size: 36
-    },
-    {
-        id: 3,
-        class: "Programacion I",
-        date: "03/06",
-        size: 12
-    },
-    {
-        id: 4,
-        class: "Matemática I",
-        date: "Last month",
-        size: 44
-    }
-];
 
 const RecentExports = () => {
     return (

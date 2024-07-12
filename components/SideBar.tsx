@@ -1,80 +1,17 @@
 'use client';
 import React from 'react'
 import { useState } from 'react';
+import { MenuItem, MenuGroup} from '@/app/types/side-bar-content';
+import { menuList } from '@/app/data/menuList';
 import UserItem from './UserItem';
 import { Calendar } from "./ui/calendar";
 import { Command, CommandGroup, CommandItem, CommandList } from './ui/command';
-import { Bell, CalendarDays, CirclePlus, House, Library, LogOut, QrCode, Settings, User } from 'lucide-react';
+import { LogOut } from 'lucide-react';
 import { Button } from './ui/button';
 
-interface MenuItem {
-    link: string;
-    label: string;
-    icon: JSX.Element;
-}
-
-interface MenuGroup {
-    group: string;
-    items: MenuItem[];
-}
 
 const SideBar = () => {
     const [date, setDate] = useState<Date | undefined>(new Date());
-    const menuList: MenuGroup[] = [
-        {
-            group: "General",
-            items: [
-                {
-                    link: "/",
-                    label: "Home",
-                    icon: <House />
-                },
-                {
-                    link: "/",
-                    label: "My Classes",
-                    icon: <Library />
-                },
-                {
-                    link: "/",
-                    label: "New Class",
-                    icon: <CirclePlus />
-                },
-                {
-                    link: "/",
-                    label: "Profile",
-                    icon: <User />
-                },
-                {
-                    link: "/",
-                    label: "Events",
-                    icon: <CalendarDays />
-                }
-                
-            ]
-        },
-        {
-            group: "Settings",
-            items: [
-                {
-                    link: "/",
-                    label: "General Settings",
-                    icon: <Settings />
-                },
-                {
-                    link: "/",
-                    label: "Notifications",
-                    icon: <Bell />
-                },
-                {
-                    link: "/",
-                    label: "QR Code Settings",
-                    icon: <QrCode  />
-                }
-                
-            ]
-        }
-    ];
-
     return (
         <div className=' fixed w-[300px] p-4 min-h-screen flex flex-col gap-4 border-r'>
             <div className='text-center'>

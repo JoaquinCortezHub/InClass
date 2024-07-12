@@ -1,4 +1,5 @@
 import Events from "@/components/Events";
+import LastAttendance from "@/components/LastAttendance";
 import RecentExports from "@/components/RecentExports";
 import TodayClasses from "@/components/TodayClasses";
 
@@ -11,6 +12,7 @@ export default function Home() {
         <Events />
         <RecentExports />
       </div>
+      <LastAttendance />
     </>
   )
 }
