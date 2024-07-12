@@ -26,7 +26,7 @@ const Events = () => {
                                     <TableCell className="font-semibold">{item.month} {item.from}</TableCell>
                                     <TableCell>{item.name}</TableCell>
                                     <TableCell className="text-right">
-                                        <Badge variant={'outline'}>{item.type}</Badge>
+                                        <Badge variant={'default'}>{item.type}</Badge>
                                     </TableCell>
                                 </TableRow>
                             ))}

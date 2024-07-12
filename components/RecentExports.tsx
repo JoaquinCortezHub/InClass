@@ -31,7 +31,7 @@ const RecentExports = () => {
                                     <TableCell>{item.date}</TableCell>
                                     <TableCell>{item.size} KB</TableCell>
                                     <TableCell className='text-right'>
-                                        <Button variant={'outline'} size={'icon'}>
+                                        <Button variant={'default'} size={'icon'}>
                                             <DownloadIcon />
                                         </Button>
                                     </TableCell>
