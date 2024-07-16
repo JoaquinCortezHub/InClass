@@ -1,14 +1,11 @@
 'use client';
 
-import { BellIcon, NotebookPen } from "lucide-react";
-import { Button } from "./ui/button";
-import {
-        DropdownMenu,
-        DropdownMenuContent,
-        DropdownMenuItem,
-        DropdownMenuTrigger,
-    } from "@/components/ui/dropdown-menu"
+import { BellIcon, Library, NotebookPen, Plus } from "lucide-react";
+import { Button } from "../ui/button";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { useState } from "react";
+import AttCard from "../dashboard/AttCard";
 
 interface Notification {
     id: number;
@@ -16,7 +13,6 @@ interface Notification {
     date: string;
     read: boolean
 }
-
 
 const Header = () => {
     const [notification, setNotification] = useState<Notification[]>([
@@ -42,10 +38,26 @@ const Header = () => {
 return (
     <div className='p-4 flex items-center justify-end border-b-2 min-h-12'>
         <div className="flex items-center justify-center gap-4">
+            <Dialog>
+                <DialogTrigger asChild>
                     <Button variant={'default'} className="bg-orange-500">
                         Take Attendance
                         <NotebookPen className="ml-2" />
                     </Button>
+                </DialogTrigger>
+                <DialogContent>
+                    <DialogHeader>
+                        <DialogTitle>New Attendance</DialogTitle>
+                        <DialogDescription>
+                            Choose from where to take attendance.
+                        </DialogDescription>
+                    </DialogHeader>
+                    <div className="flex flex-col items-stretch justify-center gap-5">
+                        <AttCard title="Create New Class" description="Create a class to take attendance." link="/newClass" icon={<Plus />} />
+                        <AttCard title="Existing Class" description="Choose a class from your library." link="/myClasses" icon={<Library />} />
+                    </div>
+                </DialogContent>
+            </Dialog>
             <DropdownMenu>
                 <DropdownMenuTrigger>
                     <Button  className='relative' variant={'outline'} size={'icon'}>

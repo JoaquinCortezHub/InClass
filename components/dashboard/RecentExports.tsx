@@ -1,10 +1,10 @@
 'use client';
 import React from 'react';
-import { Exports } from '@/app/types/exports';
-import { exportList } from '@/app/data/exportList';
+import { Exports } from '@/lib/types/exports';
+import { exportList } from '@/lib/data/exportList';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 import { DownloadIcon } from 'lucide-react';
 
 const RecentExports = () => {

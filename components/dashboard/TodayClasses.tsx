@@ -1,8 +1,8 @@
 'use client';
-import { Classes } from "@/app/types/classes";
-import { classes } from "@/app/data/classes";
+import { Classes } from "@/lib/types/classes";
+import { classes } from "@/lib/data/classes";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { NotebookPen } from "lucide-react";
 
 const TodayClasses = () => {

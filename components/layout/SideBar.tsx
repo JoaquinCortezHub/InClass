@@ -1,13 +1,14 @@
 'use client';
 import React from 'react'
 import { useState } from 'react';
-import { MenuItem, MenuGroup} from '@/app/types/side-bar-content';
-import { menuList } from '@/app/data/menuList';
+import { MenuItem, MenuGroup} from '@/lib/types/side-bar-content';
+import { menuList } from '@/lib/data/menuList';
 import UserItem from './UserItem';
-import { Calendar } from "./ui/calendar";
-import { Command, CommandGroup, CommandItem, CommandList } from './ui/command';
+import { Calendar } from "../ui/calendar";
+import { Command, CommandGroup, CommandItem, CommandList } from '../ui/command';
 import { LogOut } from 'lucide-react';
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
+import Link from 'next/link';
 
 
 const SideBar = () => {
@@ -23,9 +24,11 @@ const SideBar = () => {
                         {menuList.map((menu: MenuGroup, key: number) => (
                             <CommandGroup key={key} heading={menu.group}>
                                 {menu.items.map((option: MenuItem, optionKey: number) => 
-                                <CommandItem key={optionKey} className='flex gap-2 cursor-pointer'>
-                                    {option.icon}
-                                    {option.label}
+                                <CommandItem key={optionKey}>
+                                    <Link href={'/'} className='flex gap-2 cursor-pointer items-center'>
+                                        {option.icon}
+                                        {option.label}
+                                    </Link>
                                 </CommandItem>)}
                             </CommandGroup>
                         ))}

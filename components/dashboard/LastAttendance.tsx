@@ -1,12 +1,10 @@
 'use client';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { studentList } from "@/app/data/studentList";
-import { Students } from "@/app/types/students";
-import { Separator } from "./ui/separator";
-import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
-import { Eye } from "lucide-react";
+import { studentList } from "@/lib/data/studentList";
+import { Students } from "@/lib/types/students";
+import { Separator } from "../ui/separator";
+import { Badge } from "../ui/badge";
 
 const LastAttendance = () => {
 return (

@@ -1,5 +1,5 @@
 import { Bell, CalendarDays, CirclePlus, House, Library, QrCode, Settings, User } from "lucide-react";
-import { MenuGroup } from "../types/side-bar-content";
+import { MenuGroup } from "@/lib/types/side-bar-content";
 
 export const menuList: MenuGroup[] = [
     {

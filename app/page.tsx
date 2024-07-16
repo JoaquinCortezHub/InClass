@@ -1,7 +1,7 @@
-import Events from "@/components/Events";
-import LastAttendance from "@/components/LastAttendance";
-import RecentExports from "@/components/RecentExports";
-import TodayClasses from "@/components/TodayClasses";
+import Events from "@/components/dashboard/Events";
+import LastAttendance from "@/components/dashboard/LastAttendance";
+import RecentExports from "@/components/dashboard/RecentExports";
+import TodayClasses from "@/components/dashboard/TodayClasses";
 
 
 export default function Home() {

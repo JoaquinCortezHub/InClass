@@ -1,4 +1,4 @@
-import { Classes } from "@/app/types/classes";
+import { Classes } from "@/lib/types/classes";
 
 export const classes: Classes[] = [
     {

@@ -1,8 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader,TableRow } from "@/components/ui/table";
-import { eventList } from "@/app/data/eventList";
-import { Event } from "@/app/types/event";
-import { Badge } from "./ui/badge";
+import { eventList } from "@/lib/data/eventList";
+import { Event } from "@/lib/types/event";
+import { Badge } from "../ui/badge";
 
 const Events = () => {
     return (
