@@ -8,13 +8,21 @@ import { Calendar } from "../ui/calendar";
 import { Command, CommandGroup, CommandItem, CommandList } from '../ui/command';
 import { LogOut } from 'lucide-react';
 import { Button } from '../ui/button';
+import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-
 
 const SideBar = () => {
     const [date, setDate] = useState<Date | undefined>(new Date());
+    const router = useRouter();
+    const pathname = usePathname();
+
+    const handleNavigation = (route: string) => {
+        router.push(route);
+    };
+    
     return (
-        <div className=' fixed w-[300px] p-4 min-h-screen flex flex-col gap-4 border-r'>
+        <div className=' fixed w-[300px] p-4 min-h-screen flex flex-col gap-4 border-r bg-white'>
             <div className='text-center'>
                 <h1 className='text-2xl font-bold'>In<span className="text-orange-500">Class</span></h1>
             </div>
@@ -24,8 +32,12 @@ const SideBar = () => {
                         {menuList.map((menu: MenuGroup, key: number) => (
                             <CommandGroup key={key} heading={menu.group}>
                                 {menu.items.map((option: MenuItem, optionKey: number) => 
-                                <CommandItem key={optionKey}>
-                                    <Link href={'/'} className='flex gap-2 cursor-pointer items-center'>
+                                <CommandItem 
+                                    key={optionKey}
+                                    className={`flex gap-2 cursor-pointer ${pathname === option.link ? 'bg-orange-500 text-white' : ''}`} 
+                                    onClick={() => handleNavigation(option.link)}
+                                >
+                                    <Link href={option.link} className='flex gap-2 items-center'>
                                         {option.icon}
                                         {option.label}
                                     </Link>

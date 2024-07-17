@@ -11,22 +11,22 @@ export const menuList: MenuGroup[] = [
                 icon: <House />
             },
             {
-                link: "/",
+                link: "/myClasses",
                 label: "My Classes",
                 icon: <Library />
             },
             {
-                link: "/",
+                link: "/newClass",
                 label: "New Class",
                 icon: <CirclePlus />
             },
             {
-                link: "/",
+                link: "/profile",
                 label: "Profile",
                 icon: <User />
             },
             {
-                link: "/",
+                link: "/events",
                 label: "Events",
                 icon: <CalendarDays />
             }
@@ -37,17 +37,17 @@ export const menuList: MenuGroup[] = [
         group: "Settings",
         items: [
             {
-                link: "/",
+                link: "/general-settings",
                 label: "General Settings",
                 icon: <Settings />
             },
             {
-                link: "/",
+                link: "/notifications",
                 label: "Notifications",
                 icon: <Bell />
             },
             {
-                link: "/",
+                link: "/qr-settings",
                 label: "QR Code Settings",
                 icon: <QrCode  />
             }

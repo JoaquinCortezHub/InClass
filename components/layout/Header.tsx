@@ -36,7 +36,7 @@ const Header = () => {
         }
     ])
 return (
-    <div className='p-4 flex items-center justify-end border-b-2 min-h-12'>
+    <div className='p-4 flex items-center justify-end border-b-2 min-h-12 bg-white'>
         <div className="flex items-center justify-center gap-4">
             <Dialog>
                 <DialogTrigger asChild>
