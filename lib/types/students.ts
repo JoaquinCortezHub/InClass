@@ -4,4 +4,5 @@ export type Students = {
     lastName: string;
     studentId: number;
     status: "Present" | "Absent";
+    signTime?: string
 };
